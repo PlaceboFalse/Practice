@@ -2,9 +2,13 @@ from typing import List
 from srtask import quick_sort
 
 
+def find_coin():
+    pass
+
+
 def coin(Number: int) -> List[int]:
 
-    coin: tuple = (1, 5, 10, 25, 50, 100)
+    coin: tuple = (1, 5, 10, 25, 100)
     list_coin: List[int] = []
     list_coin.append(coin[0])
 
