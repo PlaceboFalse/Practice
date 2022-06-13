@@ -1,14 +1,17 @@
 from typing import List
+from srtask import quick_sort
 
 
 def coin(Number: int) -> List[int]:
 
     coin: tuple = (1, 5, 10, 25, 50, 100)
-    answer_coin: List[int] = []
-    answer_coin.append(coin[0])
-    return answer_coin
+    list_coin: List[int] = []
+    list_coin.append(coin[0])
+
+    return list_coin
 
 
-Number: int = int(input())
+if __name__ == "__main__":
+    Number: int = int(input())
 
-print(coin(Number))
+    print(quick_sort(coin(Number)))
