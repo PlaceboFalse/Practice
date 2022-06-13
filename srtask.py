@@ -1,32 +1,38 @@
 import random
+from typing import List
 
 
-def defaultsort():
-    for i in range(n):
+def default_sort(list_num: List[int]) -> None:
+    for i in range(list_lenght):
         j = i + 1
-        for j in range(n):
-            if a[i] < a[j]:
-                a[i], a[j] = a[j], a[i]
+        for j in range(list_lenght):
+            if list_num[i] < list_num[j]:
+                list_num[i], list_num[j] = list_num[j], list_num[i]
 
 
-def quicksort(number):
+def quick_sort(list_to_sort: List[int]) -> List[int]:
 
-    if len(number) <= 1:
-        return number
+    if len(list_to_sort) <= 1:
+        return list_to_sort
 
-    elements = number[0]
-    left = list(filter(lambda x: x < elements, number))
-    mid = [i for i in number if i == elements]
-    right = list(filter(lambda x: x > elements, number))
-    return quicksort(left) + mid + quicksort(right)
+    key = list_to_sort[0]
+
+    left = list(filter(lambda x: x < key, list_to_sort))
+    mid = list(filter(lambda x: x == key, list_to_sort))
+    right = list(filter(lambda x: x > key, list_to_sort))
+
+    return quick_sort(left) + mid + quick_sort(right)
 
 
-n = int(input())
-a = []
-for i in range(n):
-    a.append(random.randint(0, min(1000, n * 2)))
+if __name__ == '__main__':
 
-print(a)
-defaultsort()
-# print(quicksort(a))
-print(a)
+    list_lenght = int(input())
+    list_num = []
+
+    for i in range(list_lenght):
+        list_num.append(random.randint(0, min(1000, list_lenght * 2)))
+
+    print(list_num)
+    # default_sort(list_num)
+    # print(list_num)
+    print(quick_sort(list_num))
