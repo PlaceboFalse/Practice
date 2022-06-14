@@ -29,5 +29,7 @@ def find_coin(Number: int) -> List[int]:
 
 if __name__ == "__main__":
     Number: int = int(input())
-
-    print(quick_sort(find_coin(Number)))
+    if Number < 1:
+        print("can't finde coin")
+    else:
+        print(quick_sort(find_coin(Number)))
