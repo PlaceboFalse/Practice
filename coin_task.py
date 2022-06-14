@@ -2,15 +2,27 @@ from typing import List
 from srtask import quick_sort
 
 
-def find_coin():
-    pass
+def find_coin(Number: int) -> List[int]:
 
-
-def coin(Number: int) -> List[int]:
-
-    coin: tuple = (1, 5, 10, 25, 100)
+    start_coin: tuple = (1, 5, 10, 25, 100)
     list_coin: List[int] = []
-    list_coin.append(coin[0])
+
+    while Number > 0:
+        if Number - start_coin[4] >= 0:
+            Number -= start_coin[4]
+            list_coin.append(start_coin[4])
+        elif Number - start_coin[3] >= 0:
+            Number -= start_coin[3]
+            list_coin.append(start_coin[3])
+        elif Number - start_coin[2] >= 0:
+            Number -= start_coin[2]
+            list_coin.append(start_coin[2])
+        elif Number - start_coin[1] >= 0:
+            Number -= start_coin[1]
+            list_coin.append(start_coin[1])
+        else:
+            Number -= start_coin[0]
+            list_coin.append(start_coin[0])
 
     return list_coin
 
@@ -18,4 +30,4 @@ def coin(Number: int) -> List[int]:
 if __name__ == "__main__":
     Number: int = int(input())
 
-    print(quick_sort(coin(Number)))
+    print(quick_sort(find_coin(Number)))
