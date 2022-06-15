@@ -33,6 +33,4 @@ if __name__ == '__main__':
         list_num.append(random.randint(0, min(1000, list_lenght * 2)))
 
     print(list_num)
-    # default_sort(list_num)
-    # print(list_num)
     print(quick_sort(list_num))
