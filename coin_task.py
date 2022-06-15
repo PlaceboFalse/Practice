@@ -4,25 +4,14 @@ from srtask import quick_sort
 
 def find_coin(Number: int) -> List[int]:
 
-    start_coin: tuple = (1, 5, 10, 25, 100)
+    start_coin: tuple = (100, 25, 10, 5, 1)
     list_coin: List[int] = []
 
-    while Number > 0:
-        if Number - start_coin[4] >= 0:
-            Number -= start_coin[4]
-            list_coin.append(start_coin[4])
-        elif Number - start_coin[3] >= 0:
-            Number -= start_coin[3]
-            list_coin.append(start_coin[3])
-        elif Number - start_coin[2] >= 0:
-            Number -= start_coin[2]
-            list_coin.append(start_coin[2])
-        elif Number - start_coin[1] >= 0:
-            Number -= start_coin[1]
-            list_coin.append(start_coin[1])
-        else:
-            Number -= start_coin[0]
-            list_coin.append(start_coin[0])
+    while Number != 0:
+        for i in range(5):
+            if Number - start_coin[i] >= 0:
+                list_coin.append(start_coin[i])
+                Number -= start_coin[i]
 
     return list_coin
 
