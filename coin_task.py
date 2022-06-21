@@ -2,7 +2,7 @@ from typing import List, Any
 from srtask import quick_sort
 
 
-class Find():
+class Searching():
 
     @staticmethod
     def amount_in_coin(amount: int) -> Any:
@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     amount: int = int(input())
 
-    if Find.amount_in_coin(amount) == 0:
+    if Searching.amount_in_coin(amount) == 0:
         print("Can't finde coin")
     else:
-        print(Find.amount_in_coin(amount))
+        print(Searching.amount_in_coin(amount))
