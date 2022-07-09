@@ -1,11 +1,18 @@
+"Check typing and sort"
 from typing import List, Any
-from srtask import quick_sort
+from srtask import SortedList
 
 
 class Searching():
+    "Class for found coin"
+
+    @staticmethod
+    def nothing():
+        "Nothing"
 
     @staticmethod
     def amount_in_coin(amount: int) -> Any:
+        "found coin"
         if amount < 1:
             return 0
 
@@ -13,20 +20,20 @@ class Searching():
         list_coin: List[int] = []
 
         while amount != 0:
-            for i in range(len(coins)):
+            for i in enumerate(coins):
                 if amount - coins[i] >= 0:
                     list_coin.append(coins[i])
                     amount -= coins[i]
                     break
 
-        return quick_sort(list_coin)
+        return SortedList.quick_sort(list_coin)
 
 
 if __name__ == "__main__":
 
-    amount: int = int(input())
+    amount_begin: int = int(input())
 
-    if Searching.amount_in_coin(amount) == 0:
+    if Searching.amount_in_coin(amount_begin) == 0:
         print("Can't finde coin")
     else:
-        print(Searching.amount_in_coin(amount))
+        print(Searching.amount_in_coin(amount_begin))
