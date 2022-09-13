@@ -10,8 +10,7 @@ class SortedList:
         "sort list."
 
         for i in range(list_lenght):
-            j = i + 1
-            for j in range(list_lenght):
+            for j in range(i, list_lenght):
                 if list_num[i] < list_num[j]:
                     list_num[i], list_num[j] = list_num[j], list_num[i]
 
@@ -38,6 +37,6 @@ if __name__ == '__main__':
         list_num_begins.append(random.randint(0, min(1000, list_lenght * 2)))
 
     print(list_num_begins)
-    # default_sort(list_num_begins)
+    # SortedList.default_sort(list_num_begins)
     # print(list_num_begins)
     print(SortedList.quick_sort(list_num_begins))
