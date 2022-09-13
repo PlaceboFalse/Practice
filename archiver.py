@@ -1,10 +1,12 @@
+"Task"
 from typing import List
 
 
 class Archiver():
-
+    'task'
+    @staticmethod
     def zip_stats(line: str) -> None:
-
+        'zip_stats'
         global stats
         global list_lett
 
@@ -18,7 +20,9 @@ class Archiver():
 
         list_lett = sorted(stats.keys())
 
+    @staticmethod
     def found_letter(line: str, letter: str) -> List[int]:
+        'found'
         list_found = []
 
         for i in range(len(line)):
@@ -27,7 +31,9 @@ class Archiver():
 
         return list_found
 
+    @staticmethod
     def zip_line(line: str) -> str:
+        'zip_line'
         Archiver.zip_stats(line)
         line_arc = ''
 
@@ -35,7 +41,9 @@ class Archiver():
             line_arc += i
         return line_arc
 
+    @staticmethod
     def unzip(line: str, list_pos: List[int]) -> str:
+        'Unzip'
         Archiver.zip_stats(line)
 
         pos = 0
@@ -75,8 +83,8 @@ if __name__ == '__main__':
     list_key.append([8])
     list_key.append([0, 1, 2, 3])
     list_key.append([4, 5, 6, 7])
-
-    files_end.write(Archiver.unzip(files.read(), list_key))
+    files_end.write(Archiver.zip_line(files))
+    # files_end.write(Archiver.unzip(files.read(), list_key))
 
     files.close()
     files_end.close()
