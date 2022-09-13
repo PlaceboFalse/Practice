@@ -1,3 +1,4 @@
+"TEST FILE"
 from unittest import TestCase, main
 from coin_task import Searching
 
