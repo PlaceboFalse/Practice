@@ -21,9 +21,9 @@ class Searching():
 
         while amount != 0:
             for i in enumerate(coins):
-                if amount - coins[i] >= 0:
-                    list_coin.append(coins[i])
-                    amount -= coins[i]
+                if amount - i[1] >= 0:
+                    list_coin.append(i[1])
+                    amount -= i[1]
                     break
 
         return SortedList.quick_sort(list_coin)
